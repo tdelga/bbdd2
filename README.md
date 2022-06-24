@@ -22,3 +22,8 @@ Note:  Generators are usually run using the globally-installed `sails` CLI (comm
 
 sails generate model user
 sails generate action user/register
+
+hacer un endpoint como el de alta de transaccion pero para propiedad
+terminar de documentar
+hacer una baja en cascada de alta propiedad y alta transaccion
+mandar mail
