@@ -23,9 +23,6 @@ module.exports = {
     tag: {
       type: "json",
     },
-    /*     propiedad: {
-      type: "ref",
-    }, */
   },
 
   exits: {},
@@ -36,7 +33,6 @@ module.exports = {
       monto: inputs.monto,
       tipo: inputs.tipo,
       motivo: inputs.motivo,
-      //propiedad: inputs.propiedad,
     }).fetch();
     //add formas de pago
     if (inputs.formasDePago) {

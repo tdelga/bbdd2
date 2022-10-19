@@ -21,7 +21,6 @@ module.exports = {
     },
     direccion: {
       model: "direccion",
-      required: true,
     },
     propietarios: {
       collection: "Propietario",
