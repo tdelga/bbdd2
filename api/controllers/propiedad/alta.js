@@ -63,7 +63,9 @@ module.exports = {
 
     const propiedadCreada = await Propiedad.findOne({
       id: newPropiedad.id,
-    });
+    })
+      .populate("propietarios")
+      .populate("direccion");
     return propiedadCreada;
   },
 };

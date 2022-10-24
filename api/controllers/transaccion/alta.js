@@ -57,7 +57,9 @@ module.exports = {
     }
     const transaccionCreada = await Transaccion.findOne({
       id: newTransaccion.id,
-    });
+    })
+      .populate("formasDePago")
+      .populate("tag");
     return transaccionCreada;
   },
 };
