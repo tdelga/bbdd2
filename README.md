@@ -1,24 +1,48 @@
-# bbdd-2
+# Trabajo final Bases de Datos II
 
-a [Sails v1](https://sailsjs.com) application
+## 1. Presentacion
 
-### Links
+#### Este es el trabajo final para la materia Bases de Datos 2
 
-- [Sails framework documentation](https://sailsjs.com/get-started)
-- [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-- [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-- [Community support options](https://sailsjs.com/support)
-- [Professional / enterprise options](https://sailsjs.com/enterprise)
+#### Hecho por Tomas Delgadino
 
-### Version info
+#### Nro de legajo: 14211/5
 
-This app was originally generated on Fri Jun 17 2022 06:42:07 GMT-0300 (hora estándar de Argentina) using Sails v1.5.2.
+#### Este proyecto es una API REST, desarrollada con el framework [SailsJS](https://sailsjs.com/), ya que queria trabajar con esta herramienta desde hace un tiempo, tambien me parecio bastante completo y se adapta perfecto a los parametros de este trabajo final. Utiliza como ORM [Waterline](https://waterlinejs.org/), que se puede hacer el uso tanto bases de datos relacionales, como no relacionales.
 
-<!-- Internally, Sails used [`sails-generate@2.0.6`](https://github.com/balderdashy/sails-generate/tree/v2.0.6/lib/core-generators/new). -->
+#### En este proyecto se usaron como bases de datos: ==MySQL y MongoDB==
 
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
+#### Y como herramienta de testeo decidi utilizar [Insomnia](https://insomnia.rest/), una aplicacion Open Source, ya que ofrece una herramienta de testeo automatico que se puede integrar en deploys automaticos mediante CI/CD, por este motivo decidi utilizar Insomnia.
 
-sails generate model user
-sails generate action user/register
+---
+
+## 2. Instalacion
+
+#### Estos son los requerimientos para poder ejectuar y testear la aplicacion la aplicacion:
+
+- [Node JS](https://nodejs.org/en/) (8 o posterior)
+- [InsomniaREST](https://insomnia.rest/download)
+- Instalar el plugin siguiente: [aqui](https://insomnia.rest/plugins/insomnia-plugin-save-variables)
+
+#### Estos son los pasos para levantar la aplicacion:
+
+1. Abrir una terminal el la raiz del proyecto
+2. Ejecutar el comando `npm install`
+3. Ejecutar el comando `npx sails lift`
+4. El servidor esta disponible en: [http://localhost:1337](http://localhost:1337), la documentacion esta disponible en: [http://localhost:1337/swagger](http://localhost:1337/swagger)
+
+#### Estos son los pasos para ejecutar los tests:
+
+1. Abrir la aplicacion de Insomnia
+2. Importar el archivo ubicado en `./test/Insomnia_2022-10-25.json`
+3. Dirigirse a la pestaña de `TEST`
+4. Elegir cualquier test y presionar el boton `RUN TESTS`
+
+---
+
+## 3. Consideraciones
+
+1. Para poder cambiar entre MySQL y MongoDB se deben cambiar los siguientes archivos:
+   - ./config/models.js: en las linea 74, 75 esta la configuracion de el modelo de datos, en caso de usar MongoDB se debe usar "\_id" y en MySQL se usa "id"
+   - ./config/datastores.js: en las 48 a 51, estan los adapters para las diferentes bases de datos y las urls de las mismas
+2. Para poder ejecutar los tests las bases de datos deben estar vacias.

@@ -67,15 +67,15 @@ module.exports.models = {
   attributes: {
     createdAt: { type: "number", autoCreatedAt: true },
     updatedAt: { type: "number", autoUpdatedAt: true },
+    // Use for MySQL, Postgres, and SQLite
+    // ||
+    // \/
+    //--------------------------------------------------------------------------
     //id: { type: "number", autoIncrement: true },
     id: { type: "string", columnName: "_id" },
     //--------------------------------------------------------------------------
-    //  /\   Using MongoDB?
-    //  ||   Replace `id` above with this instead:
-    //
-    // ```
-    // id: { type: 'string', columnName: '_id' },
-    // ```
+    //  /\   Use for MongoDB
+    //  ||
     //
     // Plus, don't forget to configure MongoDB as your default datastore:
     // https://sailsjs.com/docs/tutorials/using-mongo-db
